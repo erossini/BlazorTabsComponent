@@ -9,3 +9,9 @@ After that, in your wwwroot\index.html or in the hosts file, you have to add a t
 ```
 <link href="_content/PSC.Blazor.Components.Tabs/themes/{theme-name}.css" rel="stylesheet" />
 ```
+
+## Themes
+
+### Light colors
+
+![image](https://user-images.githubusercontent.com/9497415/137906410-3760ca7d-3c7c-4fd3-a6a4-17fe18a52d54.png)
