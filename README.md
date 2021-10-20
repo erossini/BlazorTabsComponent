@@ -9,8 +9,8 @@ When you add the `Tabs` in your page, the first thing is the main container for 
 
 | Attribute                   | Description                                                |
 |-----------------------------|------------------------------------------------------------|
-| TextFilling1                | This text is displayed on the left handside of the tabs    |
-| TextFilling2                | This text is displayed on the right handside of the tabs   |
+| TextFilling1                | This text is displayed on the left hand side of the tabs    |
+| TextFilling2                | This text is displayed on the right hand side of the tabs   |
 
 ### Tabs container events
 Also, `Tabs` has the following events that you can use.
