@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+    <Authors>Enrico Rossini</Authors>
+    <Company>Enrico Rossini - PureSourceCode.com</Company>
+    <Copyright>Enrico Rossini - PureSourceCode.com</Copyright>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageIcon>psc_logo.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageTags>blazor, blazor-component,</PackageTags>
+    <RepositoryType>git, devops,</RepositoryType>
+    <Description>Blazor component for tabs</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageReleaseNotes>## [1.0.5] - 20/10/2021
+### Added
+- Add color themes
+- Amend Package properties</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/erossini/BlazorTabsComponent</RepositoryUrl>
+    <PackageProjectUrl>https://www.puresourcecode.com/dotnet/blazor/tabs-control-for-blazor/</PackageProjectUrl>
+  </PropertyGroup>
+
+  
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="LICENSE.txt">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="psc_logo.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

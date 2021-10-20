@@ -1,0 +1,58 @@
+﻿<CascadingValue Value="this">
+    <div class="tabs">
+        <div class="tab-container">
+            <div class="tab-filling tab-filling-left">
+                @((MarkupString)TextFilling1)
+            </div>
+            @foreach (Tab tabPage in Pages)
+            {
+                <div class="tab @GetTabCSS(tabPage)" @onclick=@( () => ActivatePage(tabPage) )>
+                    @tabPage.Text
+                </div>
+            }
+            <div class="tab-filling tab-filling-right">
+                @((MarkupString)TextFilling2)
+            </div>
+        </div>
+        <div class="tab-content">
+            @ChildContent
+        </div>
+    </div>
+</CascadingValue>
+
+@code {
+    [Parameter] public string TextFilling1 { get; set; }
+    [Parameter] public string TextFilling2 { get; set; }
+    [Parameter] public RenderFragment ChildContent { get; set; }
+
+    [Parameter] public EventCallback<Tab> OnTabChanged { get; set; }
+
+    public Tab ActivePage { get; set; }
+    List<Tab> Pages = new List<Tab>();
+
+    internal void AddPage(Tab tabPage)
+    {
+        Pages.Add(tabPage);
+        if (Pages.Count == 1)
+            ActivePage = tabPage;
+
+        StateHasChanged();
+    }
+
+    string GetTabCSS(Tab page)
+    {
+        if (!page.Enabled)
+            return "tab-disabled";
+
+        return page == ActivePage ? "tab-active" : "";
+    }
+
+    void ActivatePage(Tab page)
+    {
+        if (page.Enabled)
+        {
+            ActivePage = page;
+            OnTabChanged.InvokeAsync(page);
+        }
+    }
+}
